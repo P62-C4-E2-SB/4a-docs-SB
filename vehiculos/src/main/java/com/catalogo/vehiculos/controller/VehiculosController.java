@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+// Clase controlador vehiculos 
 @RestController
 public class VehiculosController {
 
@@ -16,27 +18,31 @@ public class VehiculosController {
         this.vehiculosRepository = vehiculosRepository;
     }
 
+    // Método GET para traer un vehículo con si ID
     @GetMapping("/vehiculos/{id}")
     Vehiculos getVehiculos (@PathVariable String id ){
         return vehiculosRepository.findById(id).orElseThrow(() -> new VehiculoNotFoundException("No se encontro vehiculo con el id: " + id));
     }
-// Método para crear nuevo vehiculo
+    
+    // Método POST para crear nuevo vehículo
     @PostMapping("/nuevoVehiculo")
     Vehiculos newVehiculo (@RequestBody Vehiculos vehiculos){
         return vehiculosRepository.save(vehiculos);
     }
 
-// Método para actualizar las características del vehículo
+    // Método PUT para actualizar las datos de un vehículo
     @PutMapping("/actualizarVehiculo/{id}")
     Vehiculos updateVehiculo (@RequestBody Vehiculos vehiculos){
         return vehiculosRepository.save(vehiculos);
     }
 
+     // Método PUT eliminar un vehículo
     @DeleteMapping ("/eliminarVehiculo/{id}")
     void deleteVehiculo (@PathVariable String id){
         vehiculosRepository.deleteById(id);
     }
-
+    
+    // Método GET para traer todos los vehículos de la BD
     @GetMapping ("/vehiculos")
     public List<Vehiculos> listAllVehiculos() {
         return vehiculosRepository.findAll();
