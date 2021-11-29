@@ -10,19 +10,23 @@ public class Alquiler {
     private String id;
     private String username;
     private String vehiculoId;
+    private String vehiculoNombre;
     private Date fechaInicio;
     private Date fechaFinal;
     private String lugarEntrega;
     private String lugarRegreso;
+    private boolean entregado;
 
-    public Alquiler(String id, String username, String vehiculoId, Date fechaInicio, Date fechaFinal, String lugarEntrega, String lugarRegreso) {
+    public Alquiler(String id, String username, String vehiculoId, String vehiculoNombre, Date fechaInicio, Date fechaFinal, String lugarEntrega, String lugarRegreso, boolean entregado) {
         this.id = id;
         this.username = username;
         this.vehiculoId = vehiculoId;
+        this.vehiculoNombre = vehiculoNombre;
         this.fechaInicio = fechaInicio;
         this.fechaFinal = fechaFinal;
         this.lugarEntrega = lugarEntrega;
         this.lugarRegreso = lugarRegreso;
+        this.entregado = entregado;
     }
 
     public String getId() {
@@ -47,6 +51,14 @@ public class Alquiler {
 
     public void setVehiculoId(String vehiculoId) {
         this.vehiculoId = vehiculoId;
+    }
+
+    public String getVehiculoNombre() {
+        return vehiculoNombre;
+    }
+
+    public void setVehiculoNombre(String vehiculoNombre) {
+        this.vehiculoNombre = vehiculoNombre;
     }
 
     public Date getFechaInicio() {
@@ -82,5 +94,11 @@ public class Alquiler {
         this.lugarRegreso = lugarRegreso;
     }
 
+    public boolean isEntregado() {
+        return entregado;
+    }
 
+    public void setEntregado(boolean entregado) {
+        this.entregado = entregado;
+    }
 }

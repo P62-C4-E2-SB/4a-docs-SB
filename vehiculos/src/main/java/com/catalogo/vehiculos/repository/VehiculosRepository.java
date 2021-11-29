@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface VehiculosRepository extends MongoRepository<Vehiculos, String> {
-
+    List<Vehiculos> findByCategoria(String categoria);
 }

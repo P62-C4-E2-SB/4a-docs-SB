@@ -20,13 +20,10 @@ public class VehiculosController {
     Vehiculos getVehiculos (@PathVariable String id ){
         return vehiculosRepository.findById(id).orElseThrow(() -> new VehiculoNotFoundException("No se encontro vehiculo con el id: " + id));
     }
-
     @PostMapping("/nuevoVehiculo")
     Vehiculos newVehiculo (@RequestBody Vehiculos vehiculos){
         return vehiculosRepository.save(vehiculos);
     }
-
-
     @PutMapping("/actualizarVehiculo/{id}")
     Vehiculos updateVehiculo (@RequestBody Vehiculos vehiculos){
         return vehiculosRepository.save(vehiculos);
@@ -42,4 +39,8 @@ public class VehiculosController {
         return vehiculosRepository.findAll();
     }
 
+    @GetMapping ("/categoriaVehiculo/{categoria}")
+    List<Vehiculos> VehiculosByCategoria(@PathVariable String categoria) {
+        return vehiculosRepository.findByCategoria(categoria);
+    }
 }
