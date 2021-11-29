@@ -17,6 +17,10 @@ public class Vehiculos {
     private String categoria;
     private double tarifa;
     private boolean disponible;
+    
+    /*
+    Entidad realizada para la correcta manipulacion de los vehiculos
+    */
 
     public Vehiculos(String id, String nombre, String placa, String marca, String modelo, String color, String cilindraje, boolean fullEquipo, String image_URL, String transmision, String categoria, double tarifa, boolean disponible) {
         this.id = id;
