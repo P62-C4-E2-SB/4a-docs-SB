@@ -20,7 +20,7 @@ public class VehiculosController {
     Vehiculos getVehiculos (@PathVariable String id ){
         return vehiculosRepository.findById(id).orElseThrow(() -> new VehiculoNotFoundException("No se encontro vehiculo con el id: " + id));
     }
-
+// Método para crear nuevo vehiculo
     @PostMapping("/nuevoVehiculo")
     Vehiculos newVehiculo (@RequestBody Vehiculos vehiculos){
         return vehiculosRepository.save(vehiculos);
