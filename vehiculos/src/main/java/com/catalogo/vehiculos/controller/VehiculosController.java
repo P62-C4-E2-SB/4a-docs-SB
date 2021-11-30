@@ -53,7 +53,7 @@ public class VehiculosController {
     public List<Vehiculos> listAllVehiculos() {
         return vehiculosRepository.findAll();
     }
-
+    // Método GET para traer todos los vehículos de una categoria
     @GetMapping ("/categoriaVehiculo/{categoria}")
     List<Vehiculos> VehiculosByCategoria(@PathVariable String categoria) {
         return vehiculosRepository.findByCategoria(categoria);
